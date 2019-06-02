@@ -1,13 +1,13 @@
 import { fetchEvents } from '../google-api'
-import { Student } from './student'
-import { TutorSession } from './tutor-session'
+import { createStudent } from './student'
+import { createTutorSession } from './tutor-session'
 
 export const tutorSessions = {
   get: async () => {
     const calendarItems = await fetchEvents()
     return calendarItems.map(item => {
-      const student = new Student(studentName(item), item.studentEmail, '') 
-      return new TutorSession(student, item.startDateTime, item.endDateTime)
+      const student = createStudent(studentName(item), item.studentEmail, '') 
+      return createTutorSession(student, item.startDateTime, item.endDateTime)
     })
   }
 }

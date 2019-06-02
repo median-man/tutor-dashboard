@@ -1,7 +1,7 @@
-export class Student {
-  constructor(name, email, zoomUrl) {
-    this.name = name
-    this.email = email
-    this.zoomUrl = zoomUrl
-  }
+export function createStudent(name, email, zoomUrl) {
+  return Object.freeze({
+    name,
+    email,
+    zoomUrl
+  })
 }
