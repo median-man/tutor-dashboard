@@ -1,8 +1,14 @@
-import { GoogleCalendarApi } from './calendar'
+import { GoogleCalendarApi, createSessionItemsFromEventItems } from './calendar'
 import { createGoogleSheetsApi } from './sheets'
-import { createSessionItemsFromEventItems } from './calendar-mapper'
-const { REACT_APP_GOOGLE_API_CLIENT_ID, REACT_APP_GOOGLE_API_KEY, REACT_APP_ROSTER_GOOGLE_SHEET_ID } = process.env
+
+const {
+  REACT_APP_GOOGLE_API_CLIENT_ID,
+  REACT_APP_GOOGLE_API_KEY,
+  REACT_APP_ROSTER_GOOGLE_SHEET_ID
+} = process.env
+
 const ROSTER_RANGE = 'Roster!A:G'
+
 const calendarApi = new GoogleCalendarApi(
   REACT_APP_GOOGLE_API_KEY,
   REACT_APP_GOOGLE_API_CLIENT_ID
@@ -19,6 +25,9 @@ export const fetchEvents = async () => {
 }
 
 export const fetchRoster = async () => {
-  const response = await sheetsApi.getSheet(REACT_APP_ROSTER_GOOGLE_SHEET_ID, ROSTER_RANGE)
+  const response = await sheetsApi.getSheet(
+    REACT_APP_ROSTER_GOOGLE_SHEET_ID,
+    ROSTER_RANGE
+  )
   return response
 }
