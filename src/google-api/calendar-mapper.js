@@ -27,18 +27,23 @@ function isValidTutorSessionItem(eventItem) {
   Maps given calendar item that is a valid tutor session
   to structure expected by app use cases.
 */
-function createTutorSessionItem(tutorSessionItem) {
+function createTutorSessionItem(eventItem) {
   return {
-    studentEmail: studentEmail(tutorSessionItem),
-    description: tutorSessionItem.description,
-    summary: tutorSessionItem.summary,
-    startDateTime: tutorSessionItem.start.dateTime,
-    endDateTime: tutorSessionItem.end.dateTime
+    studentEmail: studentEmail(eventItem),
+    studentName: studentName(eventItem),
+    description: eventItem.description,
+    summary: eventItem.summary,
+    startDateTime: eventItem.start.dateTime,
+    endDateTime: eventItem.end.dateTime
   }
 }
 
-function studentEmail(tutorSessionItem) {
-  return tutorSessionItem.attendees
+function studentEmail(eventItem) {
+  return eventItem.attendees
     .map(attendee => attendee.email)
-    .filter(email => email !== tutorSessionItem.creator.email)[0]
+    .filter(email => email !== eventItem.creator.email)[0]
+}
+
+function studentName(eventItem) {
+  return eventItem.summary.substr(0, eventItem.summary.indexOf(' and '))
 }
