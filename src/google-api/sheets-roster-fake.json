@@ -1,0 +1,48 @@
+{
+  "result": {
+    "range": "Roster!A1:G996",
+    "majorDimension": "ROWS",
+    "values": [
+      ["ROSTER"],
+      [
+        "Class Code",
+        "Graduation Date",
+        "Student Name",
+        "Student Email",
+        "Student Github Username",
+        "Student Timezone Difference",
+        "Zoom Link For Student"
+      ],
+      [
+        "UCSD20190101-FT",
+        "8/8/2019",
+        "Janeway, Kathryn",
+        "kjaneway@fake.com",
+        "voyager-janeway",
+        "0",
+        "https://us04web.zoom.us/j/fakeid1"
+      ],
+      [
+        "USD2019051219",
+        "8/7/2019",
+        "Jonathan Archer",
+        "jonarcher@fake.com",
+        "shranfan",
+        "0",
+        "https://us04web.zoom.us/j/fakeid2"
+      ]
+    ]
+  },
+  "body": "{\n  \"range\": \"Roster!A1:G996\",\n  \"majorDimension\": \"ROWS\",\n  \"values\": [\n    [\n      \"ROSTER\"\n    ],\n    [\n      \"Class Code\",\n      \"Graduation Date\",\n      \"Student Name\",\n      \"Student Email\",\n      \"Student Github Username\",\n      \"Student Timezone Difference\",\n      \"Zoom Link For Student\"\n    ],\n    [\n      \"UCSD20190101-FT\",\n      \"8/8/2019\",\n      \"Janeway, Kathryn\",\n      \"kjaneway@fake.com\",\n      \"voyager-janeway\",\n      \"0\",\n      \"https://us04web.zoom.us/j/fakeid1\"\n    ],\n    [\n      \"USD2019051219\",\n      \"8/7/2019\",\n      \"Jonathan Archer\",\n      \"jonarcher@fake.com\",\n      \"shranfan\",\n      \"0\",\n      \"https://us04web.zoom.us/j/fakeid2\"\n    ]\n  ]\n}\n",
+  "headers": {
+    "date": "Sun, 02 Jun 2019 13:52:34 GMT",
+    "content-encoding": "gzip",
+    "server": "ESF",
+    "vary": "Origin, X-Origin, Referer",
+    "content-type": "application/json; charset=UTF-8",
+    "cache-control": "private",
+    "content-length": "329"
+  },
+  "status": 200,
+  "statusText": null
+}
