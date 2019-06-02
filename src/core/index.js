@@ -6,7 +6,7 @@ export const tutorSessions = {
   get: async () => {
     const calendarItems = await fetchEvents()
     return calendarItems.map(item => {
-      const student = new Student(studentName(item), item.attendeeEmail, '') 
+      const student = new Student(studentName(item), item.studentEmail, '') 
       return new TutorSession(student, item.startDateTime, item.endDateTime)
     })
   }
