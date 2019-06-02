@@ -1,4 +1,4 @@
-import { fetchEvents } from '../google-api'
+import { fetchEvents, fetchRoster } from '../google-api'
 import { createStudent } from './student'
 import { createTutorSession } from './tutor-session'
 
@@ -10,4 +10,8 @@ export const tutorSessions = {
       return createTutorSession(student, item.startDateTime, item.endDateTime)
     })
   }
+}
+
+export const roster = {
+  get: () => fetchRoster()
 }
