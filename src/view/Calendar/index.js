@@ -11,7 +11,6 @@ export class Calendar extends Component {
   }
 
   render() {
-    console.log(this.state.sessions)
     return (
       <div>
         <table>

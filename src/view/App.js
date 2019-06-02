@@ -1,9 +1,12 @@
 import React from 'react'
 import { Calendar } from './Calendar'
-function App({ tutorSessions }) {
+import { Roster } from './Roster'
+function App({ tutorSessions, roster }) {
   return (
     <div className="App">
       <Calendar tutorSessions={tutorSessions} />
+      <hr />
+      <Roster roster={roster} />
     </div>
   )
 }
