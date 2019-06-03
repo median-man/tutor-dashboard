@@ -1,5 +1,6 @@
 import { GoogleCalendarApi, createSessionItemsFromEventItems } from './calendar'
 import { createGoogleSheetsApi } from './sheets'
+import { load } from './load-client'
 
 const {
   REACT_APP_GOOGLE_API_CLIENT_ID,
@@ -18,6 +19,11 @@ const sheetsApi = new createGoogleSheetsApi(
   REACT_APP_GOOGLE_API_KEY,
   REACT_APP_GOOGLE_API_CLIENT_ID
 )
+
+export { signIn, isSignedIn } from './load-client'
+
+export const loadGoogleClient = () =>
+  load(REACT_APP_GOOGLE_API_KEY, REACT_APP_GOOGLE_API_CLIENT_ID)
 
 export const fetchEvents = async () => {
   const events = await calendarApi.getEvents()

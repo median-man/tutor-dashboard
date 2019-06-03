@@ -6,7 +6,8 @@
   Event items which are not valid tutor sessions are filtered out
   of the returned array.
 */
-export function createSessionItemsFromEventItems(eventItems) {
+export function createSessionItemsFromEventItems(response) {
+  const eventItems = response.result.items
   return eventItems.filter(isValidTutorSessionItem).map(createTutorSessionItem)
 }
 
